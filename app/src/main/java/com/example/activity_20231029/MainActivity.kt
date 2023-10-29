@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
 
             myIntent.putExtra("message",inputMessage)
 
+//            하나의 Intent에 여러개의 값을 받아올수 있다
+
+            val inputNumber=binding.edtNumber.text.toString().toInt()
+
+            myIntent.putExtra("number",inputNumber)
             startActivity(myIntent)
 
         }

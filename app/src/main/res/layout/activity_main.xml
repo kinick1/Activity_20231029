@@ -26,6 +26,13 @@
             android:layout_height="wrap_content"
             android:text="3번 화면으로 이동"
             android:id="@+id/btnMoveToThird"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edtNumber"
+            android:hint="숫자 입력"/>
+
     </LinearLayout>
 
 </layout>
