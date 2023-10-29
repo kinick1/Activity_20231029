@@ -1,6 +1,7 @@
 package com.example.activity_20231029
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -42,6 +43,22 @@ class MainActivity : AppCompatActivity() {
             val inputNumber=binding.edtNumber.text.toString().toInt()
 
             myIntent.putExtra("number",inputNumber)
+            startActivity(myIntent)
+
+        }
+
+        binding.btnCall.setOnClickListener {
+
+//            입력한 전화번호 추출(변수 저장)
+            val inputPhoneNumber=binding.edtPhoneNumber.text.toString()
+
+
+//            어디에 전화를 걸지, 번호 정보를 기록하는  Uri
+            val myUri=Uri.parse("tel:${inputPhoneNumber}")
+
+//          전화앱에 전화번호를 들고 이동
+            val myIntent=Intent(Intent.ACTION_DIAL,myUri)
+
             startActivity(myIntent)
 
         }
